@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Voting Already Recorded</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-top: 50px;
+      }
+
+      p {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Voting Already Recorded</h1>
+    <p>Sorry, your vote has already been recorded.</p>
+    <p>Thank you for participating.</p>
+   
+    <a href="{% url 'student_dashboard' %}" class="btn">Go to Student Dashboard</a>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+{%load static%}
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> SMART VOTING SYSTEM</title>
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vote1.css' %}">
+    
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">SMART VOTING SYSTEM</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{% url 'student_dashboard' %}" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'update_profile_stud' %}">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Update Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'update_password_stud' %}">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Update Password</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'vote' %}">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Vote</span>
+          </a>
+        </li>
+       
+        <li class="log_out">
+          <a href="{%url 'logout_student' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      
+      <div class="profile-details">
+        <img src="{% static 'image/person.jpg' %}" alt="">
+        <span class="admin_name">Student</span>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <center>
+        <h1 style="text-align: center; font-size: 30px; font-weight: bold; color:crimson; margin-bottom: 20px;">
+       <u> Voting Form</u>
+        </h1>
+      </center>
+            <fieldset>
+            <div class="container">
+                <div class="row">
+                 <div class="col mx-auto col-md-8 mt-3 text-center">
+               <!-- form -->
+               <form id="itemForm" class="my-3" method="post">
+                {%csrf_token%}
+                <h3 class="text-capitalize mb-4"></h3>
+                <div class="input-group">
+            <br>
+                  <b>FOR PRESIDENT:-</b>
+                  <div class="row">
+                    <div class="col">
+        
+            
+                      <select id="p_candidate" name="president" class="form-control text-capitalize">
+                        <option value="" disabled selected>Select for President</option> 
+                        {%for x in cand%}
+                        <option>{{x.cand_president}}</option>
+                        {%endfor%}
+                      </select>
+                    </div>
+                  </div>
+            <br>
+                  <b>FOR VICE-PRESIDENT:-</b>
+                  <div class="row">
+                    <div class="col">
+                
+            
+                      <select id="vp_candidate" name="vicepresident" class="form-control text-capitalize">
+                        <option value="" disabled selected>Select for Vice-President</option> 
+                        {%for x in cand1%}
+                        <option>{{x.cand_vicepresident}}</option>
+                        {%endfor%}
+                      </select>
+                    </div>
+                  </div>
+            <br>
+                  <b>FOR SECRETARY:-</b>
+                  <div class="row">
+                    <div class="col">
+    
+            
+                      <select id="gs_candidate" name="secretary" class="form-control text-capitalize">
+                        <option value="" disabled selected>Select for Secretary</option> 
+                        {%for x in cand2%}
+                        <option>{{x.cand_secretary}}</option>
+                        {%endfor%}
+                      </select>
+                    </div>
+                  </div>
+            <br>
+                  <b>FOR TREASURER :-</b>
+                  <div class="row">
+                    <div class="col">
+                    
+            
+                      <select id="as_candidate" name="treasurer" class="form-control text-capitalize">
+                        <option value="" disabled selected>Select for Treasurer</option>
+                        {%for x in cand3%}
+                        <option>{{x.cand_treasurer}}</option>
+                        {%endfor%}
+                      </select>
+                    </div>
+                  </div>
+            <br>
+                <center>
+                 <div class="input-group-append">
+                  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        <button class="btn btn-green text-capitalize" style="background-color: #4CAF50; color: white;  padding: 15px 30px; font-size: 20px;" type="submit">Vote</button>
+                    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                
+                  
+                 </div>
+                 </center>
+                </div>
+               </form>
+            <hr> 
+              </div>
+             </div>
+            </div>
+            </fieldset>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+{%load static%}
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> SMART VOTING SYSTEM </title>
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_candidate.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">SMART VOTING SYSTEM</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="{% url 'admin_dashboard' %}" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'add_candidate' %}">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">ADD CANDIDATE</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'show_candidate' %}">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">MANAGE CANDIDATE</span>
+          </a>
+        </li>
+        <!--
+        <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li> 
+        <li>
+            <a href="stock_admin.html">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Stock</span>
+          </a>
+        </li>-->
+        <li>
+          <a href="{% url 'display_student' %}">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">MANAGE STUDENT</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'election' %}">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">ELECTION</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manage_election' %}">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">MANAGE ELECTION</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'votings' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">VOTINGS</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'display_contact' %}">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">CONTACT US</span>
+          </a>
+        </li>
+         <li>
+          <a href="{%url 'update_password_admin' %}">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">UPDATE PASSWORD</span>
+          </a>
+        </li>
+        <li>
+          <a href="{%url 'update_profile_admin' %}">
+          <i class='bx bx-coin-stack' ></i>
+          <span class="links_name">UPDATE PROFILE</span>
+        </a>
+      </li>
+       
+        <li class="log_out">
+          <a href="{%url 'logout_admin' %}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      </div>
+      
+      <div class="profile-details">
+        <img src="{% static 'image/person.jpg' %}" alt="">
+        <span class="admin_name"> ADMIN </span>
+  
+      </div>
+    </nav>
+
+    <div class="home-content">
+      
+      <h2>Update Profile</h2>
+      {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+      <form action="update_profile_admin" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {%for admin in student_list%}
+        <label>Name:</label>
+              <input type="text"  name="name" value="{{admin.name}}" required>
+      
+        <label>Email :</label>
+          <input type="email"   name="email" value="{{admin.email}}" readonly required>
+          
+      <label>Password :</label>
+              <input type="password"   name="pass" value="{{admin.password}}" required>
+    
+        <div class="button-group">
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+          <input type="submit" class="update-btn" value="Update Profile"></input>
+          &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+          <input type="submit" class="cancel-btn" value="Cancel"></button>
+        </div>
+        {%endfor%}
+      </form>
+  </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>

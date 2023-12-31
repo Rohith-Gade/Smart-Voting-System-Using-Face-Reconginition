@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>You Are Not Eligible to Vote</title>
+  <style>
+    /* Center the error message */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    /* Style the error message */
+    .error-message {
+      text-align: center;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    /* Style the "Learn More" button */
+    .learn-more-button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .learn-more-button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+    <form method="post">
+  <div class="error-message">
+    <h1>Error: You Are Not Eligible to Vote</h1>
+    <p>We're sorry, but you are not eligible to vote.</p>
+    <p>If you believe this is a mistake, please contact admin throgh our website</p>
+    <a href="{% url 'student_dashboard' %}">Retry</a>
+  </div>
+</form>
+</body>
+</html>

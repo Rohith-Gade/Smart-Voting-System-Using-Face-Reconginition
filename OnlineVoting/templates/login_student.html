@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page of Student</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel='stylesheet'>
+  
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="bg" style="  background-image: url({% static "image/bglogin.jpeg" %})" ></div>
+
+
+<form method="post">
+  {% csrf_token %}
+    <h3><center>STUDENT LOGIN PAGE</center></h3>
+    {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+  <div class="form-field">
+    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span> 
+   <input type="email" name="email" placeholder=" Enter Email address" required/>
+  </div>
+  
+  <div class="form-field">
+    <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+    <input type="password" name="pass" placeholder="Enter Password" required/>
+  </div>
+  <div>
+    <a href="{% url 'forget_password_student' %}" style="color:turquoise;">Forgot Password?</a>
+  </div>
+
+  <br>
+  
+  <div class="form-field">
+    <button class="btn" type="submit">Log in</button>
+  </div>
+
+  
+</form>
+<!-- partial -->
+
+</body>
+</html>

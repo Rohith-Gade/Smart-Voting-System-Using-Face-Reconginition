@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Face Does Not Match</title>
+  <style>
+    /* Center the error message */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    /* Style the error message */
+    .error-message {
+      text-align: center;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    /* Style the "Retry" button */
+    .retry-button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .retry-button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+    <form method="post">
+  <div class="error-message">
+    <h1>Error: Face Does Not Match</h1>
+    <p>We're sorry, but the face you provided does not match the expected face. Please try again.</p>
+    <p>If you believe this is a mistake, please contact admin throgh our website</p>
+    <a href="{% url 'student_dashboard' %}" class="retry-button">Retry</a>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+        .thank-you-message {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+          }
+          
+          .thank-you-message h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+          
+          .thank-you-message p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 0;
+          }
+          .dashboard-button {
+                background-color: #008cba;
+                border: none;
+                color: #fff;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin-top: 20px;
+                cursor: pointer;
+                }
+
+            .dashboard-button:hover {
+            background-color: #005f80;
+            }
+
+        </style>
+    </head>
+<body>
+    <div class="thank-you-message">
+        <h2>Thank you for voting!</h2>
+        <p>Your vote has been recorded.</p>
+        <a href="{% url 'student_dashboard' %}" class="dashboard-button">Go to Dashboard</a>
+      </div>
+      
+      
+</body>
+    </html>

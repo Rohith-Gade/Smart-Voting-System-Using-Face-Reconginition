@@ -1,0 +1,60 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> SMART VOTING SYSTEM </title>
+    
+   </head>
+<body>
+    <div class="col-lg-8" style="margin:15px;">
+		<label style="font-size:40px;">CANDIDATE LIST</label>
+	        <form method="post">
+		    {% csrf_token %}
+		        <div class="student-list">
+			        <table border="2">
+			         <thead>
+				        <tr>
+                        <th>CandidateId</th>
+                        <th>Name</th>
+                        <th>RollNumber</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Programme</th>
+                        <th>Semester</th>
+                        <th>Section</th>
+                        <th>Position</th>
+                        <th>Image</th>
+                        <th>Mobile</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for student in student_list %}
+                        <tr>
+                            <td>{{student.candidate_id}}</td>
+                            <td>{{student.name}}</td>
+                            <td>{{student.rollnumber}}</td>
+                            <td>{{student.email}}</td>
+                            <td>{{student.password}}</td>
+                            <td>{{student.branch}}</td>
+                            <td>{{student.semester}}</td>
+                            <td>{{student.section}}</td>
+                            <td>{{student.position}}</td>
+                            <td>{{student.image}}</td>
+                            <td>{{student.mobile}}</td>
+                            <td>{{student.gender}}</td>
+                            <td>{{student.age}}</td>
+                            <td>{{student.address}}</td>
+                            </tr>
+                                 {% endfor %} 
+                        </tbody>
+                    </table>
+		  </div>        
+    </form>
+    </div>
+    </body>
+    </html>        

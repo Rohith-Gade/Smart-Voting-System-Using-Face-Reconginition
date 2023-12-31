@@ -1,0 +1,411 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="HTML5 Template,Business,Theme,Agency,corporate" />
+    <meta name="description" content="Busco - Corporate & Agency Landing Page Template" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>Smart Voting System</title>
+
+    <!--font-awesome icons link-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome1.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/venobox.css' %}">
+    <!--main style file-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script type="text/javascript">
+    Filevalidation = () => {
+        const fi = document.getElementById('photo');
+        // Check if any file is selected.
+        if (fi.files.length > 0) {
+            for (const i = 0; i <= fi.files.length - 1; i++) {
+      
+                const fsize = fi.files.item(i).size;
+                const file = Math.round((fsize / 1024));
+                // The size of the file.
+                if (file >= 70) {
+                    alert(
+                      "File too Big, please select a file less than 70KB");
+                } else if (file < 20) {
+                    alert(
+                      "File too small, please select a file greater than 20KB");
+                } else {
+                    document.getElementById('size').innerHTML = '<b>'
+                    + file + '</b> KB';
+                }
+            }
+        }
+    }
+    function validate(){
+        var x=document.getElementById('photo').value;
+        document.getElementById('txt').value=x;
+        
+    }
+</script>
+</head>
+
+<body>
+    <!-- Preloader Part Start -->
+    <div class="preload-main">
+        <div class='preloader'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- Preloader Part End -->
+    <!-- HEADER AREA START -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}"><b>Smart Voting System</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <div class="collapse navbar-collapse menu-main" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto menu-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#banner">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#service">Our Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#registration">Registration</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link" style="color:#FFFFFF" href="#" class="dropdown-toggle" data-toggle="dropdown" href="#">Login
+                           <span class="caret"></span></a>
+                         <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="{% url 'login_admin' %}" style="color:black">Admin</a></li>
+                            <li><a class="nav-link" href="{% url 'login_student' %}" style="color:black">Student</a></li>
+                            <li><a class="nav-link" href="{% url 'login_candidate' %}" style="color:black">Candidate</a></li> 
+                              
+                        </ul>
+                      </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'results' %}">Results</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HEADER AREA END -->
+
+    <!-- BANNER AREA START -->
+    <section id="banner">
+        <i class="fa fa-long-arrow-left slidPrv" aria-hidden="true"></i>
+        <i class="fa fa-long-arrow-right slidNext" aria-hidden="true"></i>
+        <div class="slider-img">
+            <div class="slide-banner" style="background: url(image/voterimage1.jpeg)">
+                <div class="overly">
+                    <div class="banner-content">
+                        <div class="container text-center">
+                            <div class="banner-text">
+                                <h3>SMART VOTING SYSTEM USING FACE RECOGNITION</h3>
+                                <a class="ban-btn" href="#">Let's Get Start</a>
+                                <div class="social-icon text-center">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-banner" style="background: url(image/voterimage3.jpeg)">
+                <div class="overly">
+                    <div class="banner-content">
+                        <div class="container text-center">
+                            <div class="banner-text">
+                                <h3> THE MOST CUSTOMIZABLE PLATFORM</h3>
+                                <h3>FOR THE VOTING</h3>
+                                <a class="ban-btn" href="#">Let's Get Start</a>
+                                <div class="social-icon text-center">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-banner" style="background: url(image/voterimage2.jpeg)">
+                <div class="overly">
+                    <div class="banner-content">
+                        <div class="container text-center">
+                            <div class="banner-text">
+                                
+                                <h3>VOTE FOR THE FUTURE</h3>
+                                 
+                                <a class="ban-btn" href="#">Let's Get Start</a>
+                                <div class="social-icon text-center">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BANNER AREA END -->
+
+    <!-- ABOUT AREA START -->
+    <section id="about">
+        <div class="backtotop">
+            <a href="#banner"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 about-head">
+                    <h2>ABOUT US</h2>
+                    <h3>KNOW ABOUT OUR WEBSITE</h3>
+                </div>
+            </div>
+            <div class="row apt">
+                <div class="col-lg-5 col-sm-8 m-sm-auto">
+                    <div class="about-img">
+                        <img src="{% static 'image/about2.jpg' %}" alt="about-img" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 about-text">
+                    <h2>Our website name is <b>Smart Voting System</b></h2>
+                    <div class="about-p">
+                        <p>This website consists of three modules. They are admin module, candidate module and voter module.</p>
+                        <p>The voter module can update the password, update profile and can cast his/her vote. The admin can add voter, can view complaints, list of voters, candidates. The candidate can update password, update profile, view results. Website is managed by admin.</p>
+                        <p>This website can be proved to be very beneficial, especially in these times, where pandemic has restricted our access to physical contact. 	This system is used to cast their vote for the candidate.
+                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT AREA END -->
+
+    <!-- SERVICE AREA START -->
+    <section id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 service-p">
+                    <div class="about-head">
+                        <h2>OUR SERVICE</h2>
+                        <h3>CHECKOUT OUR SERVICE</h3>
+                    </div>
+                    <div class="service-details">
+                        <p>Smart Voting System using face recognition webapplication helps us to vote for the candidate virtually through a 
+                            website </p>
+                
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                        </div>
+                        <h3>Web <span>Design</span></h3>
+                        <p>As the elections are conducted in virtual mode ,the web design helps to vote in an convieneint way and it is easy conduct elections</p>
+                    </div>
+                    <div class="service-item service-item2">
+                        <div class="service-icon">
+                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                        </div>
+                        <h3>Reduces <span>Manual work</span> </h3>
+                        <p>The elections are conducted through a website.It reduces manual work as it collection of voting papers reduces.
+                            The collection of voting papers leads to increase in the fake voting.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item service-item3">
+                        <div class="service-icon">
+                            <i class="fa fa-cogs" aria-hidden="true"></i>
+                        </div>
+                        <h3>Fast and <span>Convenient</span></h3>
+                        <p>The results of the elections can be delayed as to count all the votes from either a ballot or in any rigging may happens.
+                        As the votes are given through a webapplication,we can easily count the votes through this platorm. </p>
+                    </div>
+                    <div class="service-item service-item4">
+                        <div class="service-icon">
+                            <i class="fa fa-tablet" aria-hidden="true"></i>
+                        </div>
+                        <h3>Autentication and<span> Confidentiality</span></h3>
+                        <p>As the vote of the student is taken from student after verifying though face recognition.So,that the voter or student is authenticated.Using this web appliation we can acieve authentication of the voter or the student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SERVICE AREA END -->
+<!-- REGISTRATION AREA START -->
+
+    <section id="registration" class="registration-bg">
+        <div class="port-overly"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 about-head heading-bg">
+                    <h2>Explore here</h2>
+                    <h3>REGISTRATION</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                <form method="post" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <table class="table table-bordered" style="margin-bottom:50px" color="whi">
+            <Tr>
+                <Td colspan="2"><h2 align="center">Registration Form</h2>
+                </Td>
+            </Tr>
+                        
+                        <tr>
+                            <td>Enter Your name</td>
+                            <Td><input  type="text" name="name" class="form-control" required/></td>
+                        </tr>
+                        <tr>
+                            <td>Enter Your Roll Number</td>
+                            <Td><input  type="text" name="roll" class="form-control" required/></td>
+                        </tr>
+                        <tr>
+                            <td>Enter Your email </td>
+                            <Td><input type="email" name="email" class="form-control" required/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Enter Your Password </td>
+                            <Td><input type="password" name="pass" class="form-control" required/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Enter Your Mobile </td>
+                            <Td><input type="text" name="mob" class="form-control" required/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Select Your Programme</td>
+                            <Td><select name="pro" class="form-control" required>
+                                <option value="" disabled selected>Select programme</option>
+                            <option>CSE</option>
+                            <option>EEE</option>
+                            <option>ECE</option>
+                            <option>MECH</option>
+                            <option>CIVIL</option>
+                            </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Select Your Section</td>
+                            <Td><select name="sec" class="form-control" required>
+                            <option value="" disabled selected>Select section</option>
+                            <option>Section-A</option>
+                            <option>Section-B</option>
+                            </select>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td>Select Your Semester</td>
+                            <Td><select name="sem" class="form-control" required> 
+                            <option value="" disabled selected>Select semester</option> 
+                            <option>i</option>
+                            <option>ii</option>
+                            <option>iii</option>
+                            <option>iv</option>
+                            <option>v</option>
+                            <option>vi</option>
+                            <option>vii</option>
+                            <option>viii</option>
+                            </select>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Select Your Gender</td>
+                            <Td>
+                        Male<input type="radio" name="gen" value="male"/>
+                        Female<input type="radio" name="gen" value="female"/>	
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Enter Your Age</td>
+                            <Td><input type="number" name="age" class="form-control" required/></td>
+                        </tr>
+                        <tr>
+                            <td>Upload  Your Image </td>
+                            <!-- <input type="file" id="file" onchange="Filevalidation()" /> -->
+                            <Td><input type="file" id="photo" name="myfile" class="form-control"  onchange="Filevalidation()" required/></td>
+                            <p id="size"></p>
+                        </tr>
+                        <tr>
+                            <td>Enter Your Address</td>
+                            <Td><input type="textarea" name="addr" class="form-control" required/></td>
+                        </tr>
+                        <tr>              
+                          <Td colspan="2" align="center">
+                           <input type="submit" value="Submit" class="btn btn-info" name="submit" onclick="return validate()"/>
+                              <input type="reset" value="Reset" class="btn btn-info"/>
+                        
+                            </td>
+                            
+                        </tr>
+                    </table>
+                    <input type="text" style="display: none;" id="txt" name="txt"/>
+        
+                </form>
+
+                </div>
+                </div>
+    </section>
+    <!-- REGISTRATION AREA END -->
+    <!-- Optional JavaScript -->
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/venobox.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/circular.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

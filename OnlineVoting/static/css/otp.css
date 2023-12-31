@@ -1,0 +1,45 @@
+/* Global styles */
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+  }
+  
+  /* OTP Input Form */
+  .card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: none;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    color: #4f4f4f;
+  }
+  
+  .input-group-lg .form-control {
+    font-size: 1.25rem;
+  }
+  
+  .input-group-lg .input-group-text {
+    font-size: 1.25rem;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  
+  .btn-primary:focus,
+  .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba
+  }

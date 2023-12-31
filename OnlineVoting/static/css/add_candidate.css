@@ -1,0 +1,126 @@
+form {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"],
+  input[type="radio"],select{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  select {
+    appearance: none; /* removes the default dropdown arrow on certain browsers */
+    background-color: white; /* sets the background color to white */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* adds a custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 24px;
+    cursor: pointer;
+  }
+  .file-upload {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .file-upload input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  
+  .file-upload label {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .file-upload label:hover {
+    background-color: #3e8e41;
+  }
+  .radio-group {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .radio-group label {
+    display: block;
+    margin-right: 20px;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 5px;
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+   .update-btn,
+   .cancel-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+   .update-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+  }
+  
+   .update-btn:hover {
+    background-color: #3e8e41;
+  }
+  
+   .cancel-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+  }
+  
+   .cancel-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  
